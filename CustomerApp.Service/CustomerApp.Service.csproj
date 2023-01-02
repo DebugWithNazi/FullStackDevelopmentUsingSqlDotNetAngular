@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerApp.Dto\CustomerApp.Dto.csproj" />
+    <ProjectReference Include="..\CustomerApp.Repository\CustomerApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

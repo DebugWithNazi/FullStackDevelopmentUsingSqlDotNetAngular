@@ -1,0 +1,57 @@
+<form *ngIf="form" [formGroup]="form">
+  <div class="form-group row mt-2">
+    <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" formControlName="firstName" id="firstName" placeholder="First Name">
+    </div>
+  </div>
+
+  <div class="form-group row mt-2">
+    <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" formControlName="lastName" id="lastname" placeholder="Last Name">
+    </div>
+  </div>
+
+  <div class="form-group row mt-2">
+    <label for="registerationDate" class="col-sm-2 col-form-label">Registration Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="registerationDate" id="registerationDate" placeholder="Registration Date">
+    </div>
+  </div>
+
+  <div class="form-group row mt-2">
+    <label for="address1" class="col-sm-2 col-form-label">Address1</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="address1" id="address1" placeholder="Address 1">
+    </div>
+  </div>
+
+  <div class="form-group row mt-2">
+    <label for="address2" class="col-sm-2 col-form-label">Address2</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="address2" id="address1" placeholder="Address 2">
+    </div>
+  </div>
+
+  <div class="form-group row mt-2">
+    <label for="city" class="col-sm-2 col-form-label">City</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="city" id="city" placeholder="City">
+    </div>
+  </div>
+  <div class="form-group row mt-2">
+    <label for="city" class="col-sm-2 col-form-label">Country</label>
+    <div class="col-sm-10">
+      <select formControlName="countryIso" class="form-control">
+        <option *ngFor="let opt of countries" [ngValue]="opt.iso">
+          {{opt.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group mt-3">
+    <button (click)="saveData()" class="btn btn-primary"> Submit</button>
+  </div>
+</form>

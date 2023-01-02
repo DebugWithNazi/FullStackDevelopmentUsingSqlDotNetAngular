@@ -1,0 +1,38 @@
+<h2>Customer List</h2>
+<hr />
+<div class="form-group mt-4">
+  <div class="row">
+    <div class="col-sm-6">
+      <input style="width: 415px;" class="form-control mr-3" placeholder="First Name"
+             type="text" [(ngModel)]="filter">
+    </div>
+    <div class="col-sm-6">
+      <a style="width: 89Px;margin-left: 94px;" (click)="loadData()" class="btn btn-success">
+        Search
+      </a>
+      <a [routerLink]="['/add']" class="btn btn-primary">Add</a>
+    </div>
+  </div>
+</div>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Status Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td>{{customer.firstName}}</td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.isActive}}</td>
+      <td>
+        <a [routerLink]="['/edit',customer.id]" class="btn btn-primary">Edit</a>
+        <button class="btn btn-danger mr-2" (click)="delete(customer.id)">delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
